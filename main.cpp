@@ -1,9 +1,15 @@
 #include "mainwindow.h"
 #include <QApplication>             // handles all action related to window
 #include <QDesktopWidget>
+//#include <QtCharts/QPieSeries>
+//#include <QtCharts/QPieSlice>
+
+
 
 int main(int argc, char *argv[])
 {
+
+
     QApplication a(argc, argv);         //creates app objcet
     MainWindow w;                       // creates main app object
 //    QDesktopWidget desktop;

@@ -24,6 +24,7 @@ CalorieAddWindow::CalorieAddWindow(QWidget *parent) :
     ui->comboBox->addItem("Bread") ;
     ui->comboBox->addItem("Oatmeal") ;
     ui->comboBox->addItem("Milk") ;
+    ui->comboBox->addItem("Beef") ;
 
 }
 
@@ -47,8 +48,43 @@ void CalorieAddWindow::on_pushButton_clicked()
     auto Milk = Macros(3, 5, 3.2);
     double a;
     auto Weigh = ui->doubleSpinBox->value();
-    if ( ui->comboBox->currentIndex() == 0 )
-       a = CalorieIntake(Weigh, Chicken);
+
+    switch( ui->comboBox->currentIndex() )
+    {
+    case 0 :
+        a = CalorieIntake(Weigh, Chicken);
+        break;
+    case 1 :
+        a = CalorieIntake(Weigh, Egg);
+        break;
+    case 2 :
+        a = CalorieIntake(Weigh, Rice);
+        break;
+    case 3 :
+        a = CalorieIntake(Weigh, Tomato);
+        break;
+    case 4 :
+        a = CalorieIntake(Weigh, Paprika);
+        break;
+    case 5 :
+        a = CalorieIntake(Weigh, Potato);
+        break;
+    case 6 :
+        a = CalorieIntake(Weigh, Pasta);
+        break;
+    case 7 :
+        a = CalorieIntake(Weigh, Bread);
+        break;
+    case 8 :
+        a = CalorieIntake(Weigh, Oatmeal);
+        break;
+    case 9 :
+        a = CalorieIntake(Weigh, Milk);
+        break;
+    case 10 :
+        a = CalorieIntake(Weigh, Beef);
+        break;
+    }
 
     QMessageBox::information(this, "title", QString::number(a) );
 }
